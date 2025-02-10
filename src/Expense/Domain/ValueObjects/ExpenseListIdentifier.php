@@ -8,9 +8,9 @@ use Src\Expense\Domain\Enums\ExpenseCategoryEnum;
 readonly class ExpenseListIdentifier
 {
     public function __construct(
-        private UserUuid             $userUuid,
-        private ?GroupUuid           $groupUuid = null,
-        private ?Carbon              $fromDate = null,
+        private UserUuid $userUuid,
+        private ?GroupUuid $groupUuid = null,
+        private ?Carbon $fromDate = null,
         private ?ExpenseCategoryEnum $category = null
     ) {}
 

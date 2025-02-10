@@ -13,6 +13,7 @@ class ExpenseListMapper
 {
     /**
      * @param Collection<int, Expense|RecurringExpense> $collection
+     *
      * @throws InvalidDescriptionLengthException
      * @throws InvalidNoteLengthException
      */

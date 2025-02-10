@@ -4,7 +4,6 @@ namespace Src\Shared\Exceptions;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 use Throwable;
 
 class BaseException extends Exception
@@ -38,6 +37,11 @@ class BaseException extends Exception
         return $this->getMessage();
     }
 
+    public function render(): JsonResponse
+    {
+        return response()->json($this->getResponse(), $this->statusCode);
+    }
+
     private function translate(string $errorCode, array $replace): string
     {
         try {
@@ -59,10 +63,5 @@ class BaseException extends Exception
         }
 
         return array_filter($response);
-    }
-
-    public function render(): JsonResponse
-    {
-        return response()->json($this->getResponse(), $this->statusCode);
     }
 }

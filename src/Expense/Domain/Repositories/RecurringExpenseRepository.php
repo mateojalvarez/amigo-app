@@ -2,7 +2,6 @@
 
 namespace Src\Expense\Domain\Repositories;
 
-use Src\Expense\Domain\Entities\ExpenseEntity;
 use Src\Expense\Domain\Entities\Lists\ExpenseList;
 use Src\Expense\Domain\Entities\RecurringExpenseEntity;
 use Src\Expense\Domain\ValueObjects\ExpenseListIdentifier;

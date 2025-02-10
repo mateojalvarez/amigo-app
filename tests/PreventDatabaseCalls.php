@@ -45,7 +45,7 @@ trait PreventDatabaseCalls
                   \e[33m• Soluciones permitidas:\e[0m
                     \e[32m✓\e[0m Mockear las dependencias que acceden a la base de datos
                     \e[32m✓\e[0m Mover test a:
-                        \e[36mtests/Integration/\e[0m o \e[36mtests/UprexcarDatos/Integration/\e[0m según corresponda
+                        \e[36mtests/Integration/\e[0m
 
 
                   \e[33m• Query detectada:\e[0m

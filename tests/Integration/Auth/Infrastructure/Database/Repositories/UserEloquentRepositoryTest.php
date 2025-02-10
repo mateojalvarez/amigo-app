@@ -104,5 +104,4 @@ class UserEloquentRepositoryTest extends TestCase
             new RefreshToken('invalid-refresh-token')
         );
     }
-
 }

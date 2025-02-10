@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Src\Auth\Infrastructure\Http\Controllers\LoginController;
-use Src\Auth\Infrastructure\Http\Controllers\RefreshAuthController;
 use Src\Auth\Infrastructure\Http\Controllers\LogoutController;
+use Src\Auth\Infrastructure\Http\Controllers\RefreshAuthController;
 
 Route::prefix('auth')->group(function () {
     Route::post('/login', LoginController::class);

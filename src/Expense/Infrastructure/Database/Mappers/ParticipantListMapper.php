@@ -11,7 +11,6 @@ class ParticipantListMapper
 {
     /**
      * @param Collection<int, ExpensePayee|ExpensePayer> $collection
-     * @return ParticipantsList
      */
     public static function fromCollectionToList(Collection $collection): ParticipantsList
     {

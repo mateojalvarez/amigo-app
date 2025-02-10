@@ -2,8 +2,8 @@
 
 namespace Src\Auth\Domain\Repositories;
 
-use Src\Auth\Domain\ValueObjects\Credentials;
 use Src\Auth\Domain\ValueObjects\Auth;
+use Src\Auth\Domain\ValueObjects\Credentials;
 use Src\Auth\Domain\ValueObjects\RefreshToken;
 use Src\Auth\Domain\ValueObjects\User;
 
