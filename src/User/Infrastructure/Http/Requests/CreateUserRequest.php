@@ -19,7 +19,8 @@ class CreateUserRequest extends FormRequest
         return [
             'name'     => 'required|string',
             'email'    => 'required|email',
-            'password' => 'required|string',
+            'password' => 'string',
+            'uuid'     => 'string',
         ];
     }
 
@@ -29,7 +30,7 @@ class CreateUserRequest extends FormRequest
             email: $this->input('email'),
             name: $this->input('name'),
             password: $this->input('password'),
-            uuid: null
+            uuid: $this->input('password')
         );
     }
 

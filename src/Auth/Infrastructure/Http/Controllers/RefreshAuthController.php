@@ -23,8 +23,8 @@ readonly class RefreshAuthController
 
         $auth = $useCase();
 
-        return response()->json([
-            AuthResource::toArray($auth),
-        ]);
+        return response()->json(
+            AuthResource::toArray($auth)
+        );
     }
 }
