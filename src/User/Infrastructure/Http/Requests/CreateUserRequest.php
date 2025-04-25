@@ -30,7 +30,7 @@ class CreateUserRequest extends FormRequest
             email: $this->input('email'),
             name: $this->input('name'),
             password: $this->input('password'),
-            uuid: $this->input('password')
+            uuid: $this->input('uuid')
         );
     }
 

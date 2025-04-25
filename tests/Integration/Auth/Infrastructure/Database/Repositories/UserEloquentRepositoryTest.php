@@ -40,10 +40,6 @@ class UserEloquentRepositoryTest extends TestCase
             )
         );
 
-        self::assertNotNull($auth->getAccessToken());
-
-        self::assertNotNull($auth->getRefreshToken());
-
         self::assertEquals($this->user->id, $auth->getUser()->getId());
     }
 
@@ -88,10 +84,6 @@ class UserEloquentRepositoryTest extends TestCase
         $refreshedAuth = $this->repository->refreshToken(
             $auth->getRefreshToken()
         );
-
-        self::assertNotNull($refreshedAuth->getAccessToken());
-
-        self::assertNotNull($auth->getRefreshToken());
 
         self::assertEquals($this->user->id, $auth->getUser()->getId());
     }

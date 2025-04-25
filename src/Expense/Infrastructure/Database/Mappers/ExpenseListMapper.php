@@ -12,7 +12,7 @@ use Src\Expense\Domain\Exceptions\InvalidNoteLengthException;
 class ExpenseListMapper
 {
     /**
-     * @param Collection<int, Expense|RecurringExpense> $collection
+     * @param Collection<int,Expense>|Collection<int,RecurringExpense> $collection
      *
      * @throws InvalidDescriptionLengthException
      * @throws InvalidNoteLengthException

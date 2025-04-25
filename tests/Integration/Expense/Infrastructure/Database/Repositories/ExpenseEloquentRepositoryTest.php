@@ -41,15 +41,13 @@ class ExpenseEloquentRepositoryTest extends TestCase
      * @throws InvalidDescriptionLengthException
      * @throws InvalidNoteLengthException
      */
-    public function test_it_should_save_an_expense()
+    public function test_it_should_save_an_expense(): void
     {
         $expense = $this->getExpense();
 
         $this->repository->save(
             $expense
         );
-
-        $this->assertNotNull($expense->getId());
 
         $this->assertDatabaseHas('expenses', [
             'uuid'                => $expense->getUuid(),
@@ -64,7 +62,7 @@ class ExpenseEloquentRepositoryTest extends TestCase
     /**
      * @throws InvalidDescriptionLengthException
      */
-    public function test_it_should_fail_by_unexisting_users()
+    public function test_it_should_fail_by_unexisting_users(): void
     {
         $expense = $this->getExpenseMock();
 

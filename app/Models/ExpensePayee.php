@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\ExpensePayeeFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ExpensePayee extends Model
 {
+    /** @use HasFactory<ExpensePayeeFactory> */
     use HasFactory;
     use SoftDeletes;
 

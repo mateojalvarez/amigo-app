@@ -34,7 +34,7 @@ class ExpenseList
     }
 
     /**
-     * @return array<ExpenseEntity>
+     * @return array<ExpenseEntity|RecurringExpenseEntity>
      */
     public function getExpenses(): array
     {

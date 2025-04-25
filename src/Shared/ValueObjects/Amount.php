@@ -4,11 +4,11 @@ namespace Src\Shared\ValueObjects;
 
 use Src\Shared\Enums\CurrencyEnum;
 
-readonly class Amount
+class Amount
 {
     public function __construct(
         private float $value,
-        private CurrencyEnum $currency
+        private readonly CurrencyEnum $currency
     ) {}
 
     public function getValue(): float
@@ -19,5 +19,10 @@ readonly class Amount
     public function getCurrency(): CurrencyEnum
     {
         return $this->currency;
+    }
+
+    public function negateValue(): void
+    {
+        $this->value = -1 * $this->value;
     }
 }

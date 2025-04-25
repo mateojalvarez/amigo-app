@@ -97,14 +97,14 @@ class RecurringExpenseEloquentRepository implements RecurringExpenseRepository
             })
                 ->when($identifier->getGroupUuid(), function ($query) use ($identifier) {
                     $query->whereHas('group', function ($query) use ($identifier) {
-                        $query->where('uuid', $identifier->getGroupUuid()->value());
+                        $query->where('uuid', $identifier->getGroupUuid()?->value());
                     });
                 })
                 ->when($identifier->getFromDate(), function ($query) use ($identifier) {
                     $query->where('start_date', '<=', $identifier->getFromDate());
                 })
                 ->when($identifier->getCategory(), function ($query) use ($identifier) {
-                    $query->where('expense_category_id', $identifier->getCategory()->value);
+                    $query->where('expense_category_id', $identifier->getCategory()?->value);
                 })
                 ->with([
                     'payees.user:id,uuid',

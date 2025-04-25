@@ -15,7 +15,7 @@ class UserEntity
 {
     private UserId $id;
 
-    private readonly UserUuid $uuid;
+    private UserUuid $uuid;
     private ?Password $password = null;
 
     /**

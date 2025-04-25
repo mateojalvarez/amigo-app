@@ -19,7 +19,7 @@ class RecurringExpenseFactory
     /**
      * @throws InvalidDescriptionLengthException
      */
-    public function fromDTO(CreateRecurringExpenseDTO $dto): RecurringExpenseEntity
+    public static function fromDTO(CreateRecurringExpenseDTO $dto): RecurringExpenseEntity
     {
         $recurringExpense = new RecurringExpenseEntity(
             self::getParticipantList($dto->getPayers()),

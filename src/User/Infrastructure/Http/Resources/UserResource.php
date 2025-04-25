@@ -11,7 +11,7 @@ class UserResource
         return [
             'name'  => $user->getName(),
             'email' => $user->getEmail()->value(),
-            'uuid'  => $user->getUuid(),
+            'uuid'  => $user->getUuid()->value(),
         ];
     }
 }

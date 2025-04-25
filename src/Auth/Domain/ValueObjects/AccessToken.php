@@ -8,7 +8,8 @@ readonly class AccessToken
 {
     public function __construct(
         private string $value,
-        private Carbon $expiresAt
+        private Carbon $expiresAt,
+        private ?Carbon $verifiedAt = null,
     ) {}
 
     public function value(): string

@@ -12,7 +12,7 @@ use Src\Shared\ValueObjects\Amount;
 class RecurringExpenseEntity
 {
     private int $id;
-    private readonly string $uuid;
+    private string $uuid;
     private ?ExpenseCategoryEnum $category = null;
 
     public function __construct(

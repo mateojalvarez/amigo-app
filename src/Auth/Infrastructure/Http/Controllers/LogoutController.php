@@ -19,7 +19,7 @@ readonly class LogoutController
     {
         $useCase = new LogoutUseCase(
             new LogoutDTO(
-                Auth::id()
+                (int) Auth::id()
             ),
             $this->userRepository
         );

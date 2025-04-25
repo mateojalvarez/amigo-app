@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -26,7 +27,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'code' => 'unauthenticated',
         ], 401));
 
-        if (! env('APP_DEBUG') && Request::wantsJson()) {
+        if (! env('APP_DEBUG')) {
             $exceptions->renderable(fn (Throwable $e) => response()->json([
                 'code'    => 'internal_error',
                 'message' => $e->getMessage(),

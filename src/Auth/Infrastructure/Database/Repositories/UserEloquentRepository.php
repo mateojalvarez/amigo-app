@@ -28,7 +28,7 @@ class UserEloquentRepository implements UserRepository
 
             $user = User::whereEmail($credentials->getEmail())->select('password', 'id')->first();
 
-            if (! $user || ! password_verify($credentials->getPassword(), $user->password)) {
+            if (! $user || ! password_verify($credentials->getPassword(), (string) $user->password)) {
                 throw new InvalidCredentialsException();
             }
 
@@ -82,7 +82,7 @@ class UserEloquentRepository implements UserRepository
     public function logout(AuthUser $user): void
     {
         try {
-            $user = User::find($user->getId());
+            $user = User::findOrFail($user->getId());
 
             $user->tokens()->delete();
 

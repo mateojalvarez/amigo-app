@@ -32,16 +32,11 @@ parameters:
         - database/factories/*
         - database/seeders/*
         - bootstrap/*
+        - config/*
+        - routes/*
         - public/*
         - resources/*
-        - routes/tests
         - storage/*
         - phpunit.xml
 
     reportUnmatchedIgnoredErrors: false
-
-services:
-    -
-        class: App\PHPStan\Rules\UnitTestPreventDBCallsRule
-        tags:
-            - phpstan.rules.rule

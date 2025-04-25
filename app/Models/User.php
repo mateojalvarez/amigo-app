@@ -40,7 +40,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return MorphOne<PersonalAccessToken>
+     * @return MorphOne<PersonalAccessToken, User>
      */
     public function refreshToken(): MorphOne
     {

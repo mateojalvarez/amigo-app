@@ -15,4 +15,9 @@ enum CurrencyEnum: int
     case MXN = 484;
     case HKD = 344;
     case CNY = 156;
+
+    public function equals(CurrencyEnum $currencyEnum): bool
+    {
+        return $this->value === $currencyEnum->value;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\RecurringExpenseFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class RecurringExpense extends Model
 {
+    /** @use HasFactory<RecurringExpenseFactory> */
     use HasFactory;
     use SoftDeletes;
 
@@ -25,7 +27,7 @@ class RecurringExpense extends Model
     ];
 
     /**
-     * @return HasMany<RecurringExpensePayer>
+     * @return HasMany<RecurringExpensePayer, RecurringExpense>
      */
     public function payers(): HasMany
     {
@@ -33,7 +35,7 @@ class RecurringExpense extends Model
     }
 
     /**
-     * @return HasMany<RecurringExpensePayee>
+     * @return HasMany<RecurringExpensePayee, RecurringExpense>
      */
     public function payees(): HasMany
     {
@@ -45,6 +47,6 @@ class RecurringExpense extends Model
      */
     public function group(): HasOneThrough
     {
-        return $this->hasOneThrough(Group::class, 'groups_recurring_expenses');
+        return $this->hasOneThrough(Group::class, GroupRecurringExpense::class);
     }
 }

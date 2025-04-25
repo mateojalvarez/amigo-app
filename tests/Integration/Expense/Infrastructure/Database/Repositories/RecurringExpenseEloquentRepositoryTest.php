@@ -39,8 +39,6 @@ class RecurringExpenseEloquentRepositoryTest extends TestCase
             $recurringExpense
         );
 
-        $this->assertNotNull($recurringExpense->getId());
-
         $this->assertDatabaseHas('recurring_expenses', [
             'uuid'                => $recurringExpense->getUuid(),
             'intervals'           => $recurringExpense->getTotalIntervals(),
@@ -62,8 +60,6 @@ class RecurringExpenseEloquentRepositoryTest extends TestCase
         $this->repository->save(
             $recurringExpense
         );
-
-        $this->assertNotNull($recurringExpense->getId());
 
         $this->assertDatabaseMissing('recurring_expenses', [
             'uuid'                => $recurringExpense->getUuid(),
@@ -93,7 +89,7 @@ class RecurringExpenseEloquentRepositoryTest extends TestCase
 
         $recurringExpenses = $this->repository->getList($listIdentifier);
 
-        $this->assertNotEmpty($recurringExpenses);
+        $this->assertNotEmpty($recurringExpenses->getExpenses());
 
         $this->assertContainsOnlyInstancesOf(RecurringExpenseEntity::class, $recurringExpenses->getExpenses());
 

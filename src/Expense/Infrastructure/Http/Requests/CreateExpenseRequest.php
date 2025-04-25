@@ -35,7 +35,7 @@ class CreateExpenseRequest extends FormRequest
     {
         return new CreateExpenseDTO(
             new AuthUserDTO(
-                Auth::id(),
+                (int) Auth::id(),
                 Auth::user()->uuid
             ),
             $this->getPayers(),
@@ -45,7 +45,7 @@ class CreateExpenseRequest extends FormRequest
             $this->string('description'),
             $this->string('date'),
             $this->integer('category_id') ?: null,
-            $this->string('note') ?: null
+            $this->input('note')
         );
     }
 
